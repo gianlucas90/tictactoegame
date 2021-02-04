@@ -1,0 +1,14 @@
+.settings-container {
+  /* background-color: orange; */
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 10rem);
+  grid-template-rows: 5rem 4rem;
+  grid-auto-rows: 3.5rem;
+  grid-gap: 1rem;
+}
+
+.settings-container h2 {
+  margin-bottom: 4rem;
+  grid-column: 1 / 3;
+}

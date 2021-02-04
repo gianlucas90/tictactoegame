@@ -1,0 +1,11 @@
+.table {
+  width: 100%;
+  box-sizing: border-box;
+  /* border: 10px solid blue; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #fff;
+  grid-gap: 2px;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,30 @@
+.cell {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+  background-color: #111;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* .cell:nth-child(3),
+.cell:nth-child(6),
+.cell:nth-child(9) {
+  border-right: none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9) {
+  border-bottom: none;
+} */
+
+.cell-value {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  pointer-events: none;
+}
