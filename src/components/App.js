@@ -21,6 +21,15 @@ const replaceValueOnTable = (table, index, symbol) => {
   return tableCopy;
 };
 
+function arrayEquals(a, b) {
+  return (
+    Array.isArray(a) &&
+    Array.isArray(b) &&
+    a.length === b.length &&
+    a.every((val, index) => val === b[index])
+  );
+}
+
 class App extends React.Component {
   state = {
     table: ['', '', '', '', '', '', '', '', ''],
@@ -68,25 +77,31 @@ class App extends React.Component {
     if (isMultiplayer) {
       if (isPlayer1Turn) {
         const newTable = replaceValueOnTable(table, index, symbolPlayer1);
-        this.setState({
-          table: newTable,
-          isPlayer1Turn: false,
-          isPlayer2Turn: true,
-        });
+        if (!arrayEquals(newTable, table)) {
+          this.setState({
+            table: newTable,
+            isPlayer1Turn: false,
+            isPlayer2Turn: true,
+          });
+        }
       }
       if (isPlayer2Turn) {
         const newTable = replaceValueOnTable(table, index, symbolPlayer2);
-        this.setState({
-          table: newTable,
-          isPlayer1Turn: true,
-          isPlayer2Turn: false,
-        });
+        if (!arrayEquals(newTable, table)) {
+          this.setState({
+            table: newTable,
+            isPlayer1Turn: true,
+            isPlayer2Turn: false,
+          });
+        }
       }
     } else {
       // Single player mode
       if (isPlayer1Turn) {
         const newTable = replaceValueOnTable(table, index, symbolPlayer1);
-        this.setState({ table: newTable, isPlayer1Turn: false });
+        if (!arrayEquals(newTable, table)) {
+          this.setState({ table: newTable, isPlayer1Turn: false });
+        }
       }
     }
   };

@@ -5,6 +5,7 @@
   background-color: #111;
   box-sizing: border-box;
   text-align: center;
+  cursor: pointer;
 }
 
 /* .cell:nth-child(3),
